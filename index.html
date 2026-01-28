@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Image Gallery</h1>
+  <button class="dark-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+</header>
+
+<!-- Search -->
+<input type="text" id="searchBox" placeholder="Search images..." onkeyup="searchImages()">
+
+<!-- Filters -->
+<div class="filters">
+  <button onclick="filterImages('all')">All</button>
+  <button onclick="filterImages('nature')">Nature</button>
+  <button onclick="filterImages('city')">City</button>
+  <button onclick="filterImages('animals')">Animals</button>
+  <button onclick="filterImages('tech')">Technology</button>
+</div>
+
+<!-- Gallery -->
+<div class="gallery" id="gallery">
+  <!-- Nature -->
+  <img src="images/nature1.jpg" class="image nature" data-name="nature forest" onclick="openLightbox(0)">
+  <img src="images/nature2.jpg" class="image nature" data-name="nature mountain" onclick="openLightbox(1)">
+  <img src="images/nature3.jpg" class="image nature" data-name="nature river" onclick="openLightbox(2)">
+
+  <!-- City -->
+  <img src="images/city1.jpg" class="image city" data-name="city buildings" onclick="openLightbox(3)">
+  <img src="images/city2.jpg" class="image city" data-name="city night" onclick="openLightbox(4)">
+  <img src="images/city3.jpg" class="image city" data-name="city street" onclick="openLightbox(5)">
+
+  <!-- Animals -->
+  <img src="images/animal1.jpg" class="image animals" data-name="animal dog" onclick="openLightbox(6)">
+  <img src="images/animal2.jpg" class="image animals" data-name="animal cat" onclick="openLightbox(7)">
+  <img src="images/animal3.jpg" class="image animals" data-name="animal lion" onclick="openLightbox(8)">
+
+  <!-- Tech -->
+  <img src="images/tech1.jpg" class="image tech" data-name="technology computer" onclick="openLightbox(9)">
+  <img src="images/tech2.jpg" class="image tech" data-name="technology mobile" onclick="openLightbox(10)">
+  <img src="images/tech3.jpg" class="image tech" data-name="technology robot" onclick="openLightbox(11)">
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="close" onclick="closeLightbox()">×</span>
+  <button class="prev" onclick="changeImage(-1)">❮</button>
+  <img id="lightbox-img">
+  <button class="next" onclick="changeImage(1)">❯</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
